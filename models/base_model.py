@@ -9,7 +9,7 @@ class BaseModel:
         self.updated_at = datetime.now()
 
     def __string(self):
-        print(id.__class__.name__)
+        print(id.__class__.__name__)
         print(self.__dict__)
     def save(self):
         print(str(self.updated_hour) +":"+ str(self.updated_at.minute))
