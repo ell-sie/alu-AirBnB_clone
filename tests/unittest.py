@@ -1,5 +1,6 @@
-#!/usr/bin/python3
 import unittest
+
+#unittesting
 class student:
     def __init__(self, *args):
         print(args)
