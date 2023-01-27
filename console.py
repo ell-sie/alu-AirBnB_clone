@@ -1,12 +1,10 @@
 #!/usr/bin/pyhthon3
 import math
 
+
 def calculate_circle_area(radius):
 
-
-    """
-    Given a radius, this function calculates and returns the area of a circle.
-    """
+    """Given a radius, this function calculates and returns the area of a circle."""
     return math.pi * (radius ** 2)
 
 
