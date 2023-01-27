@@ -2,5 +2,4 @@
 from base_model import BaseModel
 
 
-class Amenity(BaseModel):
-    name = ""
+class Amenity(BaseModel): name = ""
