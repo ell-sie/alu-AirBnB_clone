@@ -14,9 +14,11 @@ from models.review import Review
 from models.amenity import Amenity
 
 class HBNBCommand(cmd.Cmd):
+
+
  """ Access point to command interpreter on console"""
 prompt = '(hbnb)'
-myclass_dict = {
+myclass_dict ={
 "BaseModel": BaseModel,
 "User": User,
 "State": State,
