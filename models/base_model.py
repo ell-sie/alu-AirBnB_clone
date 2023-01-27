@@ -6,7 +6,7 @@ import datetime
 class BaseModel:
     """The BaseModel class"""
 
-
+    
     def __init__(self, id, created_at, updated_at):
         """the class constructor"""
         time_format = "%Y-%m-%dT%H:%M:%S.%f"
@@ -19,8 +19,9 @@ class BaseModel:
         """return '[{}] ({}) <{}>'\
             .format(self.__class__.__name__, self.id, self.__dict__)"""
         print('[{}] ({}) <{}>'.format(type().__name__, self.id, self.__dict__))
-    def save(self):
-        print(str(self.updated_hour) +":"+ str(self.updated_at.minute)) 
+
+        def save(self):
+        print(str(self.updated_hour) + ":" + str(self.updated_at.minute)) 
         
     def to_dict(self):
         """return dictionary of the class instance"""
