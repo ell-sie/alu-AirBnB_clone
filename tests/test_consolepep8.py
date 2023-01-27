@@ -16,5 +16,5 @@ class TestPep8(unittest.TestCase):
         pep8style = pep8.StyleGuide(quiet=True)
         for file in files_to_check:
             result = pep8style.check_files([file])
-            self.assertEqual(result.total_errors, 0, 
+            self.assertEqual(result.total_errors, 0,
                              f"Found code style errors in {file}.")
