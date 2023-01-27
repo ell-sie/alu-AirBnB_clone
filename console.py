@@ -130,30 +130,4 @@ class HBNBCommand(cmd.Cmd):
             print('** value missing **')
             return
         key_name = _input[2]
-        input_value = _input[3]
-        setattr(models.storage.all()[query_key], key_name, input_value)
-
-        models.storage.all()[query_key].save()
-
-    def default(self, inp):
-        """Retrieve all instances class using: <class name>.all()"""
-        count = 0
-        words = inp.split(".")
-
-        if words[0] in classes_dict and words[1] == "all()":
-            self.do_all(words[0])
-        elif words[0] in classes_dict and words[1] == "count()":
-            if (words[0] not in classes_dict):
-                print("** class doesn't exist **")
-                return (False)
-            else:
-                for key in models.storage.all():
-                    if key.startswith(words[0]):
-                        count += 1
-                print(count)
-        else:
-            print("*** Unknown syntax: {}".format(inp))
-
-
-if __name__ == '__main__':
-    HBNBCommand().cmdloop()
+        input_value =
