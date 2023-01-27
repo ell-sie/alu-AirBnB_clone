@@ -13,12 +13,13 @@ from models.state import State
 from models.review import Review
 from models.amenity import Amenity
 
+
 class HBNBCommand(cmd.Cmd):
 
 
- """ Access point to command interpreter on console"""
+    """ Access point to command interpreter on console"""
 prompt = '(hbnb)'
-myclass_dict ={
+myclass_dict = {
 "BaseModel": BaseModel,
 "User": User,
 "State": State,
@@ -27,21 +28,27 @@ myclass_dict ={
 "Place": Place,
 "Review": Review
 }
+
+
 def do_nothing(self, arg):
         """ Does nothing """
         return True
+
 
 def do_quit(self, arg):
         """ Exits the program and saves safely data """
         return True
 
+
 def do_EOF(self, arg):
         """ Exits the command console"""
         return True
 
+
 def emptyline(self):
         """ Overrides the empty line method """
         return True
+
 
 def do_create(self, arg):
         """ Creates a new instance of the basemodel class in JSON"""
@@ -55,6 +62,7 @@ def do_create(self, arg):
         new_instance = HBNBCommand.myclass_dict[my_data[0]]()
         new_instance.save()
         print(new_instance.id)
+
 
 def do_show(self, arg):
         """Prints the string representation of an instance
@@ -76,6 +84,7 @@ def do_show(self, arg):
                 print(value.__str__())
                 return
             print("** no instance found **")
+
 
 def do_destroy(self, arg):
         """
@@ -100,6 +109,7 @@ def do_destroy(self, arg):
         else:
             print("** no instance found **")
 
+
 def do_all(self, arg):
         """
         Prints all string representation of all instances
@@ -114,6 +124,7 @@ def do_all(self, arg):
             key_items = models.storage.all()[key_items]
             print(key_items)
         return
+
 
 def do_update(self, arg):
         """
@@ -152,6 +163,7 @@ def do_update(self, arg):
         else:
             setattr(my_instance, my_data[2], my_data[3])
         models.storage.save()
+
 
 def do_update2(self, arg):
         """
@@ -194,6 +206,7 @@ def do_update2(self, arg):
                 setattr(my_instance, my_key, my_dictionary[my_key])
         models.storage.save()
 
+
 def do_count(self, arg):
         """
         Counts number of instances of a class
@@ -205,8 +218,9 @@ def do_count(self, arg):
                 counter += 1
         print(counter)
 
+
 def default(self, arg):
-        """ handle new ways of inputing data and Retrieve all instances class using: <class name>.all() """
+        """ Retrieve all instances class using: <class name>.all() """
         count = 0
         words = arg.split(".")
 
