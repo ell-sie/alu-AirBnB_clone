@@ -3,6 +3,8 @@ import uuid
 import datetime
 
 class BaseModel:
+
+
     """The BaseModel class"""
     def __init__(self, id, created_at, updated_at):
         """the class constructor"""
