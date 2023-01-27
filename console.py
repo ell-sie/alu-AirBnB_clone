@@ -13,16 +13,18 @@ from models.state import State
 from models.review import Review
 from models.amenity import Amenity
 
-
-
-class HBNBCommand (cmd.Cmd):
-    
-    
-    """ Access point to command interpreter on console"""
-    prompt = '(hbnb)'
-myclass_dict = {"BaseModel": BaseModel, "User": User, "State": State, "City": City, "Amenity": Amenity, "Place": Place, "Review": Review}
-
-
+class HBNBCommand(cmd.Cmd):
+ """ Access point to command interpreter on console"""
+prompt = '(hbnb)'
+myclass_dict = {
+"BaseModel": BaseModel,
+"User": User,
+"State": State,
+"City": City,
+"Amenity": Amenity,
+"Place": Place,
+"Review": Review
+}
 def do_nothing(self, arg):
         """ Does nothing """
         return True
