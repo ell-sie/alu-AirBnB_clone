@@ -4,7 +4,9 @@ import math
 
 def calculate_circle_area(radius):
 
-    """Given a radius, this function calculates and returns the area of a circle."""
+    """
+    Given a radius, this function calculates and returns the area of a circle.i
+    """
     return math.pi * (radius ** 2)
 
 
