@@ -16,11 +16,12 @@ from models.amenity import Amenity
 
 class HBNBCommand(cmd.Cmd):
 
-
-    """ Access point to command interpreter on console"""
+   
+  """ Access point to command interpreter on console"""
 prompt = '(hbnb)'
 myclass_dict = {"BaseModel": BaseModel, "User": User, "State": State,
-                "City": City, "Amenity": Amenity, "Place": Place, "Review": Review}
+                "City": City, "Amenity": Amenity, "Place": Place,
+                 "Review": Review}
 
 
 def do_nothing(self, arg):
