@@ -212,7 +212,7 @@ def do_count(self, arg):
 
 
 def default(self, arg):
-        """ handle new ways of inputing data and Retrieve all instances class using: <class name>.all() """
+        """ handle new ways of inputing data """
         count = 0
         words = arg.split(".")
 
