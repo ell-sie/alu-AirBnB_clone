@@ -13,8 +13,8 @@ class TestUser(unittest.TestCase):
     self.assertEqual(result.total_errors, 0, "Code does not conform to PEP8")
 
 
-def test_attributes(self):
-    """Test the attributes of the User class"""
+    def test_attributes(self):
+     """Test the attributes of the User class"""
     user = User()
     user.first_name = 'Agasaro'
     user.last_name = 'Elsie'
