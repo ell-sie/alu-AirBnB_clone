@@ -13,6 +13,11 @@ def test_instance(self):
         state = State()
         self.assertIsInstance(state, State)
 
+def test_inheritance(self):
+        """test is_subclass."""
+        state = State()
+        self.assertTrue(issubclass(type(state), BaseModel))
+
 def test_pep8_conformance(self):
       """Test that we conform to PEP8."""
       pep8style = pep8.StyleGuide(quiet=True)
