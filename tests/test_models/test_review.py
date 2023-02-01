@@ -4,10 +4,7 @@
 import unittest
 import pep8
 from models.base_model import BaseModel
-from models.city import City
 from models.place import Place
-from models.amenity import Amenity
-from models.state import State
 from models.review import Review
 from models.user import User
 
@@ -37,6 +34,10 @@ class TestReview(unittest.TestCase):
         review.place_id = place.id
         review.user_id = user.id
         review.text = ''
-        self.assertEqual(review.place_id, place.id)
-        self.assertEqual(review.user_id, user.id)
+        self.assertEqual(review.place_id, place.id, '')
+        self.assertEqual(review.user_id, user.id, '')
         self.assertEqual(review.text, '')
+
+
+if __name__ == "__main__":
+    unittest.main()
