@@ -15,8 +15,13 @@ from models.amenity import Amenity
 
 
 class HBNBCommand (cmd.Cmd):
-    """ Access point to command interpreter on console"""
-    prompt = '(hbnb)'
+     """HBNBCommand class
+    
+    This class implements a simple command-line interface for the HBNB project.
+    It uses the cmd module to handle the command line interface.
+    """
+
+     prompt = '(hbnb)'
 myclass_dict = {"BaseModel": BaseModel, "User": User, "State": State,
                 "City": City, "Amenity": Amenity, "Place": Place,
                 "Review": Review}
