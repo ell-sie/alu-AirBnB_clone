@@ -55,3 +55,8 @@ class TestUser(unittest.TestCase):
         self.assertEqual(user.first_name, 'Betty')
         self.assertEqual(user.last_name, 'Bar')
         self.assertEqual(user.email, 'airbnb@mail.com')
+
+
+
+if __name__ == "__main__":
+    unittest.main()
