@@ -8,12 +8,12 @@ class TestBaseModel(unittest.TestCase):
 
     def setUp(self):
         self.model = BaseModel()
-        self.model.name = "My primary Model"
+        self.model.name = "My First Model"
         self.model.my_number = 89
 
     def test_name(self):
         self.model.save()
-        self.assertEqual(self.model.name, "My primary Model")
+        self.assertEqual(self.model.name, "My First Model")
 
     def test_number(self):
         self.assertEqual(self.model.my_number, 89)
