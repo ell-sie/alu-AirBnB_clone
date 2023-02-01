@@ -21,8 +21,8 @@ class HBNBCommand (cmd.Cmd):
     """
     prompt = '(hbnb)'
     myclass_dict = {"BaseModel": BaseModel, "User": User, "State": State,
-                "City": City, "Amenity": Amenity, "Place": Place,
-                "Review": Review}
+                    "City": City, "Amenity": Amenity, "Place": Place,
+                    "Review": Review}
 
 
 def do_nothing(self, arg):
@@ -51,7 +51,7 @@ def do_help(self, args):
          for which help is available
         'help <command>' or '? <command>' gives help on <command>
         """
-        cmd.Cmd.do_help(self, args)  
+        cmd.Cmd.do_help(self, args) 
 
 
 def do_create(self, arg):
