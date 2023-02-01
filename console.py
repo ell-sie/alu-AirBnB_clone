@@ -15,14 +15,12 @@ from models.amenity import Amenity
 
 
 class HBNBCommand (cmd.Cmd):
-     """HBNBCommand class
-    
+    """HBNBCommand class
     This class implements a simple command-line interface for the HBNB project.
     It uses the cmd module to handle the command line interface.
     """
-
-     prompt = '(hbnb)'
-myclass_dict = {"BaseModel": BaseModel, "User": User, "State": State,
+    prompt = '(hbnb)'
+    myclass_dict = {"BaseModel": BaseModel, "User": User, "State": State,
                 "City": City, "Amenity": Amenity, "Place": Place,
                 "Review": Review}
 
@@ -49,8 +47,8 @@ def emptyline(self):
 
 def do_help(self, args):
         """Get help on commands
-        
-        'help' or '?' with no arguments prints a list of commands for which help is available
+        'help' or '?' with no arguments prints a list of commands
+         for which help is available
         'help <command>' or '? <command>' gives help on <command>
         """
         cmd.Cmd.do_help(self, args)  
