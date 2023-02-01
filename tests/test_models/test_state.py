@@ -27,3 +27,6 @@ def test_state_name(self):
     state.name = ""
     self.assertEqual(state.name, '')
 
+
+if __name__ == "__main__":
+    unittest.main()
