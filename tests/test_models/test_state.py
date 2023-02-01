@@ -8,13 +8,13 @@ from models.base_model import BaseModel
 class TestState(unittest.TestCase):
     """Tes the state class"""
 
-def test_instance(self):
+def test_is_instance(self):
         """test instance."""
         state = State()
         self.assertIsInstance(state, State)
 
 def test_inheritance(self):
-        """test is_subclass."""
+        """test inheritance"""
         state = State()
         self.assertTrue(issubclass(type(state), BaseModel))
 
@@ -28,9 +28,9 @@ def test_class(self):
     state = State()
     self.assertEqual(state.__class__.__name__, "State")
 
-def test_state_name(self):
+def test_attr(self):
     state = State()
-    state.name = ""
+    self.assertIsNotNone(state.id)
     self.assertEqual(state.name, '')
 
 
