@@ -3,6 +3,7 @@
 import unittest
 import pep8
 from models.state import State
+from models.base_model import BaseModel
 
 class TestState(unittest.TestCase):
     """Tes the state class"""
