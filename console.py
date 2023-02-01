@@ -28,18 +28,27 @@ def do_nothing(self, arg):
 
 
 def do_quit(self, arg):
-        """ Exits the program and saves safely data """
+        """ Quit command to exit the program """
         return True
 
 
 def do_EOF(self, arg):
-        """ Exits the command console"""
+        """ EOF command to exit the program"""
         return True
 
 
 def emptyline(self):
-        """ Overrides the empty line method """
-        return True
+        """ Do nothing on an empty line + ENTER """
+        pass
+
+
+def do_help(self, args):
+        """Get help on commands
+        
+        'help' or '?' with no arguments prints a list of commands for which help is available
+        'help <command>' or '? <command>' gives help on <command>
+        """
+        cmd.Cmd.do_help(self, args)  
 
 
 def do_create(self, arg):
