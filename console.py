@@ -51,7 +51,7 @@ def do_help(self, args):
          for which help is available
         'help <command>' or '? <command>' gives help on <command>
         """
-        cmd.Cmd.do_help(self, args) 
+        cmd.Cmd.do_help(self, args)
 
 
 def do_create(self, arg):
