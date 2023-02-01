@@ -11,6 +11,11 @@ from models.user import User
 
 class TestReview(unittest.TestCase):
 
+    def test_is_instance(self):
+        """test instance."""
+        review = Review()
+        self.assertIsInstance(review, Review)
+    
     def test_pep8_conformance(self):
         """Test that the code conforms to PEP8."""
         pep8style = pep8.StyleGuide(quiet=True)

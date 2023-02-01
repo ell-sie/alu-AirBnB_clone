@@ -13,6 +13,11 @@ from models.review import Review
 
 class TestAmenity(unittest.TestCase):
 
+    def test_is_instance(self):
+        """test instance."""
+        amenity = Amenity()
+        self.assertIsInstance(amenity, Amenity)
+
     def test_pep8_conformance(self):
         """Test that the code conforms to PEP8."""
         pep8style = pep8.StyleGuide(quiet=True)
