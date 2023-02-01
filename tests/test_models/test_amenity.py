@@ -18,7 +18,7 @@ class TestAmenity(unittest.TestCase):
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/amenity.py'])
         self.assertEqual(result.total_errors, 0,
-                         f"Found {result.total_errors} code style errors (and warnings).")
+             f"Found {result.total_errors} code style errors (and warnings).")
 
     def test_class(self):
         amenity = Amenity()
@@ -31,5 +31,9 @@ class TestAmenity(unittest.TestCase):
     def test_attribute(self):
         """Test the 'name' attribute of the Amenity class."""
         my_amenity = Amenity()
-        my_amenity.name = "Wi-Fi"
-        self.assertEqual(my_amenity.name, 'Wi-Fi')
+        my_amenity.name = ""
+        self.assertEqual(my_amenity.name, '')
+
+
+if __name__== "__main__":
+    unittest.main()
