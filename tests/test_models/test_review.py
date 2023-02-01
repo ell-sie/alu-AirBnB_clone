@@ -36,7 +36,7 @@ class TestReview(unittest.TestCase):
         review = Review()
         review.place_id = place.id
         review.user_id = user.id
-        review.text = 'sugel'
+        review.text = ''
         self.assertEqual(review.place_id, place.id)
         self.assertEqual(review.user_id, user.id)
-        self.assertEqual(review.text, 'sugel')
+        self.assertEqual(review.text, '')
