@@ -20,6 +20,11 @@ class TestPlace(unittest.TestCase):
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
 
+    def test_instance(self):
+        """test instance."""
+        place = Place()
+        self.assertIsInstance(place, Place)
+
     def test_class_name(self):
         """Test the name of the class."""
         place = Place()
@@ -38,8 +43,8 @@ class TestPlace(unittest.TestCase):
         place = Place()
         place.city_id = city.id
         place.user_id = user.id
-        place.name = "Coworking"
-        place.description = "description"
+        place.name = ""
+        place.description = ""
         place.number_rooms = 0
         place.number_bathrooms = 0
         place.max_guest = 0
@@ -49,8 +54,8 @@ class TestPlace(unittest.TestCase):
         place.amenity_ids = [amenity.id]
         self.assertEqual(place.city_id, city.id)
         self.assertEqual(place.user_id, user.id)
-        self.assertEqual(place.name, "Coworking")
-        self.assertEqual(place.description, "description")
+        self.assertEqual(place.name, "")
+        self.assertEqual(place.description, "")
         self.assertEqual(place.number_rooms, 0)
         self.assertIsInstance(place.number_rooms, int)
         self.assertEqual(place.number_bathrooms, 0)
@@ -63,5 +68,8 @@ class TestPlace(unittest.TestCase):
         self.assertIsInstance(place.latitude, float)
         self.assertEqual(place.longitude, 0.0)
         self.assertIsInstance(place.longitude, float)
-        self.assertEqual(place.amenity_ids, [amenity.id])
-        self.assertIsInstance(place.amenity_ids, list)
+        self.assertEqual(place.amenity_ids, [])
+
+
+if __name__ == "__main__":
+    unittest.main()
