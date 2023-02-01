@@ -22,15 +22,18 @@ class TestCity(unittest.TestCase):
         city = City()
         self.assertIsInstance(city, City)
 
+
     def test_class(self):
         city = City()
         self.assertEqual(str(type(city)),
-                         "<class 'models.city.City'>")
+                        "<class 'models.city.City'>")
+
 
     def test_inheritance(self):
         """test inheritance."""
         city = City()
         self.assertTrue(issubclass(type(city), BaseModel))
+
 
     def test_city(self):
         """
