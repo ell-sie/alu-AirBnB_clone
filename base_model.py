@@ -1,4 +1,5 @@
-#!/usr/bin/python3
+#!/usr/bin/python
+import models
 import uuid
 import datetime
 
@@ -8,7 +9,8 @@ class BaseModel:
     def __init__(self, *args, **kwargs):
         """the class constructor and takes kwargs"""
         self.id = uuid.uuid4()
-        time_format = "%Y-%m-%dT%H:%M:%S.%f"
+        self.created_at = datetime.now()
+        self.updated_at = datetime.now()
 
         if kwargs != 0:
             for key, value in kwargs.items():
@@ -24,13 +26,16 @@ class BaseModel:
 
     def __str__(self):
         """displaying the class name"""
+        classname = self.__class__.__name__
         return '[{}] ({}) <{}>'\.format(self.__class__.__name__, self.id, self.__dict__)
         
     def save(self):
         self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
-        self.__dict__ = '__class__'
-        self.__dict__['created_at'] = datetime.datetime.strptime(self.created_at, '%Y-%m-%dT%H:%M:%S.%f')
-        self.__dict__['updated_at'] = datetime.datetime.strptime(self.updated_at, '%Y-%m-%dT%H:%M:%S.%f')
-        return self.__dict__
+        wdict = self.__dict__.copy()
+        wdict["__class__"] = self.__class__.__name__
+        wdict["created_at"] = self.created_at.isoformat()
+        wdict["updated_at"] = self.updated_at.isoformat()
+        return wdict
