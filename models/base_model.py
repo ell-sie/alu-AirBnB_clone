@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-""" this is the base class for all models """
+""" Base class for all models """
 import uuid
 from datetime import date, datetime, time
 from models import storage
 
 
 class BaseModel:
-    """class defining commom attributes
+    """class defines all commom attributes/methods
     for other classes"""
 
     def __init__(self, *argv, **kwargs):
@@ -15,8 +15,6 @@ class BaseModel:
         created_at: datetime
         updated_at: datetime
 
-        getting arguments to recreate
-        BaseModel
         creates new instance Model
         """
         self.id = str(uuid.uuid4())
@@ -41,7 +39,7 @@ class BaseModel:
             storage.new(self)
 
     def __str__(self):
-        """ default string output of class name \
+        """ default string return of class name \
                 ,id and dictionary files """
         return '[{}] ({}) {}'\
             .format(self.__class__.__name__, self.id, self.__dict__)
@@ -49,7 +47,7 @@ class BaseModel:
     def save(self):
         """
         update of attribute updated_at
-        with latest time
+        with most recent time
         updated_at: datetime
         """
         self.updated_at = datetime.now()
@@ -58,7 +56,7 @@ class BaseModel:
     def to_dict(self):
         """
         get the objects of the instance
-        returns: dictionary
+        return dictionary of Basemodel
         """
         temp_dict = self.__dict__.copy()
         temp_dict['__class__'] = self.__class__.__name__
