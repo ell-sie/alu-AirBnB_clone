@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""Unit test for User class"""
+"""test for User class"""
 import unittest
 from models.user import User
 
 
 class TestUser(unittest.TestCase):
     def test_class(self):
-        """Tests the class of an instance of User"""
+        """Tests the class of a User instance"""
         user = User()
         self.assertEqual(user.__class__.__name__, "User")
 
