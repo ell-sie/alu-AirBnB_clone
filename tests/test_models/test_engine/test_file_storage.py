@@ -1,18 +1,17 @@
 #!/usr/bin/python3
+""" testing file storage"""
 import os
 import unittest
 from os import path
 from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
-""" testing the file storage"""
 
 
 class TestCaseFileStorage(unittest.TestCase):
     """ class for test cases """
 
     def setUp(self):
-        """ setting up the various
-            components for the test """
+        """ setting up components for the test """
         self.dir_path = 'file.json'
         self.my_model = FileStorage()
 
