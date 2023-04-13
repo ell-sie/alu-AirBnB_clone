@@ -9,7 +9,7 @@ import unittest
 class TestCaseUser(unittest.TestCase):
 
     def setUp(self):
-        """ user test setup """
+        """ test user setup """
         all_objs = storage.all()
         # print("-- Reloaded objects --")
         # for obj_id in all_objs.keys():
@@ -17,7 +17,7 @@ class TestCaseUser(unittest.TestCase):
         #   print(obj)
 
     def test_variables(self):
-        """ test name before and after """
+        """ test name previously and after """
         # print("-- Create a new User --")
         my_user = User()
         my_user.first_name = "Betty"
