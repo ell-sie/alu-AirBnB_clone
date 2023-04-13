@@ -26,15 +26,15 @@ class TestCaseFileStorageEngine(unittest.TestCase):
 
     def test_Number(self):
         """ checking if reloaded model
-        has the same class as previously """
+        has the same class as before """
         self.assertEqual(self.my_model.__class__.__name__, "BaseModel")
 
     def test_NameOfModel(self):
-        """ test if name reflex previous name"""
+        """ test if name reflects previous name"""
         self.assertEqual(self.my_model.name, "My_First_Model")
 
     def test_ClassName(self):
-        """ checking the class name sure """
+        """ testing the class name """
         self.assertEqual(self.my_model.to_dict()['my_number'], 89)
 
 
