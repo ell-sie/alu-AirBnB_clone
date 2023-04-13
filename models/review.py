@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Class representing a review"""
+"""Implementation of the review class"""
 
 from models.base_model import BaseModel
 
@@ -11,5 +11,5 @@ class Review(BaseModel):
     text = ""
 
     def __init__(self, *args, **kwargs):
-        """Construct a Review instance"""
+        """Build a Review instance"""
         super().__init__(*args, **kwargs)
