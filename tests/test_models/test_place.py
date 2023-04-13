@@ -7,28 +7,28 @@ from models.place import Place
 class TestCasePlace(unittest.TestCase):
 
     def test_instance(self):
-        """ checking instance type """
+        """ test instance """
         place = Place()
         self.assertIsInstance(place, Place)
 
     def test_is_class(self):
-        """ check if its a class """
+        """ testing if its a class """
         place = Place()
         self.assertEqual(str(type(place)), "<class 'models.place.Place'>")
 
     def test_is_subclass(self):
-        """ check if its a subclass"""
+        """ test is_subclass"""
         place = Place()
         self.assertTrue(issubclass(type(place), BaseModel))
 
     def test_city_id(self):
-        """ testing the city id """
+        """ testing city id """
         place = Place()
         place.city_id = "SF"
         self.assertEqual(place.city_id, "SF")
 
     def test_user_id(self):
-        """ testing the user id"""
+        """ testing user id"""
         place = Place()
         place.user_id = "123"
         self.assertEqual(place.user_id, "123")
@@ -40,13 +40,13 @@ class TestCasePlace(unittest.TestCase):
         self.assertEqual(place.name, "Place 1")
 
     def test_description(self):
-        """ testing the description """
+        """ testing description """
         place = Place()
         place.description = "A place to stay in SF"
         self.assertEqual(place.description, "A place to stay in SF")
 
     def test_number_rooms(self):
-        """ testing the room numbers """
+        """ testing room numbers """
         place = Place()
         place.number_rooms = 2
         self.assertEqual(place.number_rooms, 2)
@@ -58,7 +58,7 @@ class TestCasePlace(unittest.TestCase):
         self.assertEqual(place.number_bathrooms, 2)
 
     def test_max_guest(self):
-        """ testing max guest users """
+        """ testing maximum guest users """
         place = Place()
         place.max_guest = 4
         self.assertEqual(place.max_guest, 4)
