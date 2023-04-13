@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Interprets console """
+""" console interpreter """
 import cmd
 from models.base_model import BaseModel
 from models import storage
@@ -51,20 +51,20 @@ class HBNBCommand(cmd.Cmd):
 
     def emptyline(self):
         """ called when empty line
-        is entered. """
+        is entered in response """
         pass
 
     def do_quit(self, argv):
-        """exit - Exit the program."""
+        """exit - Exit Applicaiton"""
         return True
 
     def do_EOF(self, argv):
-        """ end of file signal """
+        """ end of file """
         print("")
         return True
 
     def do_create(self, new_class):
-        """ Creates a new instance of a class and,
+        """ Creates a new instance of Basemodel
         saves it(to the JSON file) and prints the id"""
         if not new_class:
             print("** class name missing **")
@@ -77,8 +77,8 @@ class HBNBCommand(cmd.Cmd):
                 print(new_class.__dict__['id'])
 
     def do_show(self, *argv):
-        """ Displays the string representation of an instance
-        based on the class name and id """
+        """ Prints the string representation of an instance based on
+        the class name and id """
         items = argv[0].split(" ")
         if (len(items)) == 1 and items[0] == '':
             print("** class name missing **")
@@ -116,7 +116,7 @@ class HBNBCommand(cmd.Cmd):
                         print("** no instance found **")
 
     def do_all(self, class_type):
-        """ Displays string representations of all instances given if
+        """ prints all string representation of all instances based
         or not on the class name """
         self.current_counter = 0;
         all_objects = storage.all()
@@ -139,7 +139,7 @@ class HBNBCommand(cmd.Cmd):
                     print(temp_dict)
 
     def do_update(self, *argv):
-        """ updates a class instance given the class\
+        """ updates an instance based on the class\
          name and id by adding or updating
         attribute ( save the change into the json file)"""
         items = argv[0].split(" ")
