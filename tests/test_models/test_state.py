@@ -8,7 +8,7 @@ from models.state import State
 class TestCaseState(unittest.TestCase):
 
     def test_instance(self):
-        """ test instance type """
+        """ test instance """
         state = State()
         self.assertIsInstance(state, State)
 
@@ -19,12 +19,12 @@ class TestCaseState(unittest.TestCase):
                          "<class 'models.state.State'>")
 
     def test_is_subclass(self):
-        """ test is subclass """
+        """ test is_subclass """
         state = State()
         self.assertTrue(issubclass(type(state), BaseModel))
 
     def test_state_name(self):
-        """ test mainly state name """
+        """ test if state name is set correctly """
         state = State()
         state.name = "Rwanda"
         self.assertEqual(state.name, 'Rwanda')
