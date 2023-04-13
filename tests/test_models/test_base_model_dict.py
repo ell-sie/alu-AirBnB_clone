@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" test models for dictionary """
+""" unittest models for dictionary """
 import unittest
 from models.base_model import BaseModel
 import datetime
@@ -32,32 +32,32 @@ class TestCaseBaseModelWithKwarg(unittest.TestCase):
         # print(self.my_model is self.my_new_model)
 
     def test_NewModel(self):
-        """ checking to ensure instances are different
+        """ checking if instances are different
         objects """
         self.assertNotEqual(self.my_model, self.my_new_model)
 
     def test_idDifferentModels(self):
-        """ ensuring the id are the same
+        """ testing the id are the same
         since the same object data was used to create it """
         self.assertEqual(self.my_model.id, self.my_new_model.id)
 
     def test_NewModelType(self):
-        """ ensuring instance method is same as
+        """ testing instance method is same as
         BaseModel"""
         self.assertEqual(self.my_new_model.__class__.__name__, "BaseModel")
 
     def test_dateFormatsCreated_at(self):
-        """ ensuring the new created times are in
+        """ testing the new created times are in
         date time format"""
         self.assertEqual(type(self.my_new_model.__dict__['created_at']), datetime.datetime)
 
     def test_dateFormatsUpdated_at(self):
-        """ ensuring the new updated time are in
+        """ testing if updated time is in
         date time format """
         self.assertEqual(type(self.my_new_model.__dict__['updated_at']), datetime.datetime)
 
     def test_CustomNameSet(self):
-        """ ensuring custom name set for model
+        """ testing name set for model
         is still the same """
         self.assertEqual(self.my_new_model.__dict__['name'], "My_First_Model")
 
