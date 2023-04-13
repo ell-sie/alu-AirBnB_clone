@@ -5,20 +5,20 @@ from models.city import City
 
 
 class TestCaseCity(unittest.TestCase):
-    """Test cases for City class."""
+    """Test case for City class."""
 
     def test_instance(self):
-        """Test instantiation of City class."""
+        """Test instantiation of class."""
         city = City()
         self.assertIsInstance(city, City)
 
     def test_is_class(self):
-        """Test type of City instance."""
+        """Test instance."""
         city = City()
         self.assertEqual(str(type(city)), "<class 'models.city.City'>")
 
     def test_is_subclass(self):
-        """Test if City is a subclass of BaseModel."""
+        """Test if City is_subclass of BaseModel."""
         city = City()
         self.assertTrue(issubclass(type(city), BaseModel))
 
@@ -30,7 +30,7 @@ class TestCaseCity(unittest.TestCase):
         self.assertEqual(city.state_id, "kigali")
 
     def test_name(self):
-        """Test name attribute."""
+        """Test name of attribute."""
         city = City()
         self.assertEqual(city.name, "")
         city.name = "bali"
