@@ -18,12 +18,12 @@ class TestCaseReview(unittest.TestCase):
         self.assertEqual(str(type(review)), "<class 'models.review.Review'>")
 
     def test_is_subclass(self):
-        """Test if Review is a subclass of BaseModel"""
+        """Test if Review is a subclass"""
         review = Review()
         self.assertTrue(issubclass(type(review), BaseModel))
 
     def test_place_id(self):
-        """Test if place_id can be set and retrieved correctly"""
+        """Test place_id can be set and retrieved correctly"""
         review = Review()
         self.assertEqual(review.place_id, "")
         review.place_id = "fred123"
