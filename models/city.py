@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-"""City class definition"""
+"""City class interpreter"""
 
 from models.base_model import BaseModel
 
 
 class City(BaseModel):
-    """Define City class"""
+    """Represention of a City class"""
     state_id = ""
     name = ""
 
