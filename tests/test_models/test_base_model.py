@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" test model for main base class"""
+""" unittest model for main base class"""
 import unittest
 from time import sleep
 import unittest
@@ -67,12 +67,12 @@ class TestCaseBaseModel(unittest.TestCase):
 
     def test_updatedAt(self):
         """ testing if updated at is a string
-        that acn be access with key updated at"""
+        that can be access with key updated at"""
         my_model_json = self.my_model.to_dict()
         self.assertEqual(type(my_model_json['updated_at']), str)
 
     def test_save(self):
-        """ checking if calling save updates the time"""
+        """ testing if calling save updates the time"""
         old_time = self.my_model.to_dict()['updated_at']
         sleep(1)
         self.my_model.save()
@@ -82,7 +82,7 @@ class TestCaseBaseModel(unittest.TestCase):
         self.assertNotEqual(old_time, new_time)
 
     def test_id(self):
-        """ ensuring the id does not
+        """ testing that the id does not
         change for a single instance
         over operations """
         self.my_model.save()
@@ -100,7 +100,7 @@ class TestCaseBaseModel(unittest.TestCase):
         # self.assertEqual(eval(temp_hold.split(" ")[2]), self.my_model.__dict__)
 
     def test_sizeofDict(self):
-        """ensuring the dictionary is the expected length
+        """checking if the dictionary is the true length
         as converting to json has one additional value """
         self.assertEqual(len(self.my_model.to_dict()), len(self.my_model.__dict__) + 1)
 
